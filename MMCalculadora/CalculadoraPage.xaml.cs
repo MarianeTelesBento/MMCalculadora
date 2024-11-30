@@ -3,7 +3,7 @@ namespace MMCalculadora;
 public partial class CalculadoraPage : ContentPage
 {
     /*
-        Arrumar pag inicial; implementar: multiplicação, Subtração; Vincular a soma no resulado; Botão de apagar um digito apenas.
+        Arrumar pag inicial; implementar: multiplica??o, Subtra??o; Vincular a soma no resulado; Bot?o de apagar um digito apenas.
      */
     private decimal value = 0;
     private decimal _previousValue = 0;
@@ -14,43 +14,43 @@ public partial class CalculadoraPage : ContentPage
         InitializeComponent();
     }
 
-    // Método para lidar com os números
+    // M?todo para lidar com os n?meros
     private void OnButtonClicked(object sender, EventArgs e)
     {
         var button = (Button)sender;
         var buttonText = button.Text;
 
-        // Se o display for "0", substitui pelo número
+        // Se o display for "0", substitui pelo n?mero
         if (displayEntry.Text == "0" || "+-*".Contains(displayEntry.Text))
         {
             displayEntry.Text = buttonText;
         }
         else
         {
-            // Se não, adiciona o número à string
+            // Se n?o, adiciona o n?mero ? string
             displayEntry.Text += buttonText;
         }
     }
 
-    // Método para lidar com as operações (+, -, *, /)
+    // M?todo para lidar com as opera??es (+, -, *, /)
     private void OnOperationClicked(object sender, EventArgs e)
     {
         _previousValue = decimal.Parse(displayEntry.Text);
         value += _previousValue;
-        displayEntry.Text = "+"; // Reseta o display para o próximo número
+        displayEntry.Text = "+"; // Reseta o display para o pr?ximo n?mero
     }
 
-    // Método para calcular o resultado
+    // M?todo para calcular o resultado
     private void OnEqualClicked(object sender, EventArgs e)
     {
         _previousValue = decimal.Parse(displayEntry.Text);
         value += _previousValue;
-        // Exibe o resultado (Mandar para a página de Calculo da subtração da compra)
-        displayEntry.Text = value.ToString();  
+        // Exibe o resultado (Mandar para a p?gina de Calculo da subtra??o da compra)
+        displayEntry.Text = value.ToString();
         //Mensagem de texto
     }
 
-    // Método para limpar o display
+    // Metodo para limpar o display
     private void OnClearClicked(object sender, EventArgs e)
     {
         displayEntry.Text = "0";
@@ -71,6 +71,6 @@ public partial class CalculadoraPage : ContentPage
     }
 
 
-    
+
 
 }

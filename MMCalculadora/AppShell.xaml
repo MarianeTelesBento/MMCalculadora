@@ -21,6 +21,11 @@
     Title="CalculadoraPage" 
     Icon="settings.png" 
     ContentTemplate="{DataTemplate local:CalculadoraPage}" />
-    
+
+    <ShellContent 
+    Title="TrocoPage" 
+    Icon="settings.png" 
+    ContentTemplate="{DataTemplate local:TrocoPage}" />
+
 
 </Shell>
