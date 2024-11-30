@@ -11,30 +11,30 @@
             Padding="30,50,30,30">
 
             <Frame CornerRadius="15">
-                <Image Source="Resources/Images/troco.gif"/>
+                <Image Source="Resources/Images/troco.png"/>
             </Frame>
 
             <Label
-                x:Name="changeLabelTotalCliente"
+                x:Name="changeLabelTotalSpent"
                 Text="Gasto Total: "
                 FontSize="18"
                 HorizontalOptions="Center" />
 
             <Label
-                x:Name="changeLabelTotalGasto"
+                x:Name="changeLabelTotalPayment"
                 Text="Pagamento: "
                 FontSize="18"
                 HorizontalOptions="Center" />
 
             <Label
-                x:Name="changeLabelTroco"
+                x:Name="changeLabelChange"
                 Text="Troco: "
                 FontSize="18"
                 HorizontalOptions="Center" />
 
             <Button
                 Text="Finalizar"
-                Clicked="OnFinalizarChangeClicked"
+                Clicked="OnFinishChangeClicked"
                 HorizontalOptions="Fill" 
                 FontSize="20" />
 

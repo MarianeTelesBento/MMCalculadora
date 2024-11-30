@@ -10,7 +10,7 @@ namespace MMCalculadora
         {
             InitializeComponent();
         }
-        private async void OnCalculateChangeClicked(object sender, EventArgs e)
+        private async void OnStartClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CalculadoraPage());
         }

@@ -31,7 +31,7 @@
 
             <Button
                 Text="Iniciar"
-                Clicked="OnCalculateChangeClicked"
+                Clicked="OnStartClicked"
                 HorizontalOptions="Fill" 
                 FontSize="20" />
 

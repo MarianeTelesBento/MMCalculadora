@@ -14,7 +14,7 @@
             <Label Text="Gasto Total do Cliente" 
                    FontSize="20"/>
             <Entry
-                x:Name="totalAmountEntry"
+                x:Name="totalAmountSpentEntry"
                 Placeholder="Valor Total" 
                 PlaceholderColor = "#696969"
                 IsEnabled="False"
@@ -40,5 +40,4 @@
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

@@ -2,32 +2,39 @@ namespace MMCalculadora;
 
 public partial class TrocoPage : ContentPage
 {
-    public decimal TotalGasto { get; set; }
-    public TrocoPage(string totalGasto)
+    public decimal TotalSpent { get; set; }
+
+    public TrocoPage(string totalSpent)
     {
-        TotalGasto = decimal.Parse(totalGasto);
+        TotalSpent = decimal.Parse(totalSpent);
         InitializeComponent();
-        totalAmountEntry.Text = TotalGasto.ToString();
+        totalAmountSpentEntry.Text = TotalSpent.ToString();
     }
 
     private async void OnCalculateChangeClicked(object sender, EventArgs e)
     {
+        decimal change;
+        decimal givenAmount;
+
         if (string.IsNullOrWhiteSpace(givenAmountEntry.Text))
         {
-            DisplayAlert("Erro", "Preencha o Pagamento do Cliente", "OK");
+            await DisplayAlert("Erro", "Preencha o Pagamento do Cliente", "OK");
             return;
         }
 
-        decimal givenAmount = decimal.Parse(givenAmountEntry.Text);
+        givenAmount = decimal.Parse(givenAmountEntry.Text);
 
-        if (givenAmount < TotalGasto)
+        if (givenAmount < TotalSpent)
         {
-            DisplayAlert("Erro", "O valor recebido é menor que o valor total.", "OK");
+            await DisplayAlert("Erro", "O valor recebido é menor que o valor total.", "OK");
             return;
         }
 
+        change = givenAmount - TotalSpent;
 
-        decimal change = givenAmount - TotalGasto;
-        await Navigation.PushAsync(new ResultadoPage(change, TotalGasto, givenAmount));
+        givenAmountEntry.IsEnabled = false;
+        givenAmountEntry.IsEnabled = true;
+
+        await Navigation.PushAsync(new ResultadoPage(givenAmount, TotalSpent, change));
     }
 }
