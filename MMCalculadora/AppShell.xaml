@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MMCalculadora.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MMCalculadora"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MMCalculadora">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent 
+        Title="ResultadoPage" 
+        Icon="settings.png" 
+        ContentTemplate="{DataTemplate local:ResultadoPage}" />
+    
+
+</Shell>
