@@ -13,7 +13,7 @@ namespace MMCalculadora
 
         private async void OnCalculateChangeClicked(object sender, EventArgs e)
         {
-            decimal totalAmount = decimal.Parse(totalAmountEntry.Text);
+            /*decimal totalAmount = decimal.Parse(totalAmountEntry.Text);
             decimal givenAmount = decimal.Parse(givenAmountEntry.Text);
 
             if (givenAmount < totalAmount)
@@ -24,7 +24,8 @@ namespace MMCalculadora
 
             decimal change = givenAmount - totalAmount;
 
-            await Navigation.PushAsync(new ResultadoPage(change));
+            await Navigation.PushAsync(new ResultadoPage(change));*/
+            await Navigation.PushAsync(new CalculadoraPage());
         }
             
         

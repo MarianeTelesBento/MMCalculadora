@@ -17,5 +17,10 @@
         Icon="settings.png" 
         ContentTemplate="{DataTemplate local:ResultadoPage}" />
     
+    <ShellContent 
+    Title="CalculadoraPage" 
+    Icon="settings.png" 
+    ContentTemplate="{DataTemplate local:CalculadoraPage}" />
+    
 
 </Shell>

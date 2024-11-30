@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace MMCalculadora;
 
 public partial class ResultadoPage : ContentPage
@@ -6,6 +8,8 @@ public partial class ResultadoPage : ContentPage
 	 
     public ResultadoPage(decimal change)
 	{
+        CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR");
+
         Change = change;
         InitializeComponent();
         changeLabel.Text = $"Troco: {change:C}";
