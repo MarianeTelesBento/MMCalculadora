@@ -4,14 +4,21 @@ public partial class TrocoPage : ContentPage
 {
     public decimal TotalGasto { get; set; }
     public TrocoPage(string totalGasto)
-	{
+    {
         TotalGasto = decimal.Parse(totalGasto);
-		InitializeComponent();
-	}
+        InitializeComponent();
+        totalAmountEntry.Text = TotalGasto.ToString();
+    }
 
     private async void OnCalculateChangeClicked(object sender, EventArgs e)
     {
-        totalAmountEntry.Text = TotalGasto.ToString();
+
+        if (string.IsNullOrWhiteSpace(givenAmountEntry.Text))
+        {
+            DisplayAlert("Erro", "Preencha o Pagamento do Cliente", "OK");
+            return;
+        }
+
         decimal givenAmount = decimal.Parse(givenAmountEntry.Text);
 
         if (givenAmount < TotalGasto)
@@ -20,8 +27,8 @@ public partial class TrocoPage : ContentPage
             return;
         }
 
-        decimal change = givenAmount - TotalGasto;
 
+        decimal change = givenAmount - TotalGasto;
         await Navigation.PushAsync(new ResultadoPage(change));
     }
 }

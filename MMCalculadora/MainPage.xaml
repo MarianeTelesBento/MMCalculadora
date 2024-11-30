@@ -1,19 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MMCalculadora.MainPage">
+             x:Class="MMCalculadora.MainPage"
+             Title="Iniciar">
 
     <ScrollView>
         <VerticalStackLayout 
-        Padding="30,0" 
-        Spacing="25">
+        Margin="20"
+        Spacing="50"
+        Padding="30,50,30,30">
 
-            <Image Source="Resources/Images/mem.jpg"/>
+            <Frame CornerRadius="15">
+                <Image Source="Resources/Images/mem.jpg"/>
+            </Frame>
+
+            <Label FontSize="20" 
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center">
+                
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Seja Bem Vindo a Calculadora" />
+                        <Span Text="&#10;" />
+                        <Span Text="M&amp;M Finance" FontAttributes="Italic"/>
+                    </FormattedString>
+                </Label.FormattedText>
+                
+            </Label>
+
 
             <Button
-            Text="Calcular Troco"
-            Clicked="OnCalculateChangeClicked"
-            HorizontalOptions="Fill" />
+                Text="Iniciar"
+                Clicked="OnCalculateChangeClicked"
+                HorizontalOptions="Fill" 
+                FontSize="20" />
 
         </VerticalStackLayout>
     </ScrollView>

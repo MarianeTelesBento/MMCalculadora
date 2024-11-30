@@ -2,38 +2,41 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MMCalculadora.TrocoPage"
-             Title="TrocoPage">
+             Title="Troco">
 
 
     <ScrollView>
         <VerticalStackLayout 
-            Padding="30,0" 
-            Spacing="25">
+            Margin="50"
+            Spacing="20"
+            Padding="30,50,30,30">
 
-            <Label 
-                Text="Calculadora MM" 
-                FontSize="20" 
-                HorizontalOptions="Center"/>
-
-            <Image 
-                Source="https://image.tuasaude.com/media/article/mf/05/beneficios-da-carambola_13461_l.jpg" />
-
+            <Label Text="Gasto Total do Cliente" 
+                   FontSize="20"/>
             <Entry
                 x:Name="totalAmountEntry"
                 Placeholder="Valor Total" 
                 PlaceholderColor = "#696969"
-                Keyboard="Numeric" />
+                IsEnabled="False"
+                Keyboard="Numeric" 
+                FontSize="20" />
 
+            <Label Text="Pagamento do Cliente" 
+                   FontSize="20" 
+                   Margin="0, 50, 0, 0"/>
             <Entry
                 x:Name="givenAmountEntry"
                 Placeholder="Valor Recebido"
                 PlaceholderColor = "#696969"
-                Keyboard="Numeric" />
+                Keyboard="Numeric" 
+                FontSize="20" />
 
             <Button
                 Text="Calcular Troco"
                 Clicked="OnCalculateChangeClicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill" 
+                Margin="0, 30, 0, 0"
+                FontSize="20"/>
 
         </VerticalStackLayout>
     </ScrollView>

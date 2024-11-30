@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MMCalculadora.ResultadoPage">
-    <VerticalStackLayout>
-        <Label
-        x:Name="changeLabel"
-        Text="Troco: "
-        FontSize="18"
-        HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="MMCalculadora.ResultadoPage"
+             Title="Troco">
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="50"
+            Spacing="20"
+            Padding="30,50,30,30">
+
+            <Frame CornerRadius="15">
+                <Image Source="Resources/Images/mem.jpg"/>
+            </Frame>
+
+            <Label
+            x:Name="changeLabel"
+            Text="Troco: "
+            FontSize="18"
+            HorizontalOptions="Center" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+ 
 </ContentPage>

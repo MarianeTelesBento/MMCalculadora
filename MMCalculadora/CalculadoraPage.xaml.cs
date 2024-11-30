@@ -21,7 +21,7 @@ public partial class CalculadoraPage : ContentPage
         var buttonText = button.Text;
 
         // Se o display for "0", substitui pelo n?mero
-        if (displayEntry.Text == "0" || "+-*".Contains(displayEntry.Text))
+        if (displayEntry.Text == "0" || "+".Contains(displayEntry.Text))
         {
             displayEntry.Text = buttonText;
         }
@@ -48,7 +48,7 @@ public partial class CalculadoraPage : ContentPage
         // Exibe o resultado (Mandar para a p?gina de Calculo da subtra??o da compra)
         displayEntry.Text = value.ToString();
 
-        DisplayAlert("Total", value.ToString(), "OK");
+        DisplayAlert("Total da Compra", value.ToString(), "OK");
         await Navigation.PushAsync(new TrocoPage(value.ToString()));
         //Mensagem de texto
     }
@@ -73,7 +73,22 @@ public partial class CalculadoraPage : ContentPage
         }
     }
 
+    private void OnDotClicked(object sender, EventArgs e)
+    {
+        var button = (Button)sender;
+        var buttonText = button.Text;
 
+        if (displayEntry.Text.Contains("."))
+        {
+            return;
+        }
+        else
+        {
+            displayEntry.Text += buttonText;
+        }
+
+
+    }
 
 
 }
