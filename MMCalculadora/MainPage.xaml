@@ -5,35 +5,16 @@
 
     <ScrollView>
         <VerticalStackLayout 
-            Padding="30,0" 
-            Spacing="25">
-            
-            <Label 
-                Text="Calculadora MM" 
-                FontSize="20" 
-                HorizontalOptions="Center"/>
+        Padding="30,0" 
+        Spacing="25">
 
-            <Image 
-                Source="https://image.tuasaude.com/media/article/mf/05/beneficios-da-carambola_13461_l.jpg" />
-
-            <Entry
-                x:Name="totalAmountEntry"
-                Placeholder="Valor Total" 
-                PlaceholderColor = "#696969"
-                Keyboard="Numeric" />
-
-            <Entry
-                x:Name="givenAmountEntry"
-                Placeholder="Valor Recebido"
-                PlaceholderColor = "#696969"
-                Keyboard="Numeric" />
+            <Image Source="Resources/Images/mem.jpg"/>
 
             <Button
-                Text="Calcular Troco"
-                Clicked="OnCalculateChangeClicked"
-                HorizontalOptions="Fill" />
+            Text="Calcular Troco"
+            Clicked="OnCalculateChangeClicked"
+            HorizontalOptions="Fill" />
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

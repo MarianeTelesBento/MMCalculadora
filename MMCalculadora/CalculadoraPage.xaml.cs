@@ -41,12 +41,15 @@ public partial class CalculadoraPage : ContentPage
     }
 
     // M?todo para calcular o resultado
-    private void OnEqualClicked(object sender, EventArgs e)
+    private async void OnEqualClicked(object sender, EventArgs e)
     {
         _previousValue = decimal.Parse(displayEntry.Text);
         value += _previousValue;
         // Exibe o resultado (Mandar para a p?gina de Calculo da subtra??o da compra)
         displayEntry.Text = value.ToString();
+
+        DisplayAlert("Total", value.ToString(), "OK");
+        await Navigation.PushAsync(new TrocoPage(value.ToString()));
         //Mensagem de texto
     }
 
