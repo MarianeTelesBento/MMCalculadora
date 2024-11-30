@@ -4,15 +4,37 @@ namespace MMCalculadora;
 
 public partial class ResultadoPage : ContentPage
 {
-    public decimal Change { get; set; }
-	 
-    public ResultadoPage(decimal change)
+    public decimal Troco { get; set; }
+    public decimal TotalCliente { get; set; }
+    public decimal GastoTotal { get; set; }
+
+    public ResultadoPage(decimal troco, decimal gastoTotal, decimal totalCliente)
 	{
         CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR");
 
-        Change = change;
+        Troco = troco;
+        TotalCliente = gastoTotal;
+        GastoTotal = totalCliente;
+
         InitializeComponent();
-        changeLabel.Text = $"Troco: {change:C}";
+        changeLabelTotalCliente.Text = $"Gasto Total: {TotalCliente:C}";
+        changeLabelTotalGasto.Text = $"Pagamento: {GastoTotal:C}";
+        changeLabelTroco.Text = $"Troco: {Troco:C}";
+    }
+
+    private async void OnFinalizarChangeClicked(object sender, EventArgs e)
+    {
+        bool resposta = await DisplayAlert("Compra confirmada", "Deseja voltar para o Inicio?", "Sim", "Não");
+
+        if (resposta)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
+        else
+        {
+            return;
+        }
+       
     }
 
 }

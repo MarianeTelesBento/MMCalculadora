@@ -12,7 +12,6 @@ public partial class TrocoPage : ContentPage
 
     private async void OnCalculateChangeClicked(object sender, EventArgs e)
     {
-
         if (string.IsNullOrWhiteSpace(givenAmountEntry.Text))
         {
             DisplayAlert("Erro", "Preencha o Pagamento do Cliente", "OK");
@@ -29,6 +28,6 @@ public partial class TrocoPage : ContentPage
 
 
         decimal change = givenAmount - TotalGasto;
-        await Navigation.PushAsync(new ResultadoPage(change));
+        await Navigation.PushAsync(new ResultadoPage(change, TotalGasto, givenAmount));
     }
 }

@@ -3,23 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MMCalculadora.ResultadoPage"
              Title="Troco">
+    
     <ScrollView>
-        <VerticalStackLayout
-            Margin="50"
-            Spacing="20"
+        <VerticalStackLayout 
+            Margin="20"
+            Spacing="30"
             Padding="30,50,30,30">
 
             <Frame CornerRadius="15">
-                <Image Source="Resources/Images/mem.jpg"/>
+                <Image Source="Resources/Images/troco.gif"/>
             </Frame>
 
             <Label
-            x:Name="changeLabel"
-            Text="Troco: "
-            FontSize="18"
-            HorizontalOptions="Center" />
-            
+                x:Name="changeLabelTotalCliente"
+                Text="Gasto Total: "
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="changeLabelTotalGasto"
+                Text="Pagamento: "
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="changeLabelTroco"
+                Text="Troco: "
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="Finalizar"
+                Clicked="OnFinalizarChangeClicked"
+                HorizontalOptions="Fill" 
+                FontSize="20" />
+
         </VerticalStackLayout>
     </ScrollView>
- 
 </ContentPage>
