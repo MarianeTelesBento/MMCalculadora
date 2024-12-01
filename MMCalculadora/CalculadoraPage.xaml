@@ -4,7 +4,7 @@
              x:Class="MMCalculadora.CalculadoraPage"
              Title="Calculadora">
     <VerticalStackLayout Padding="30,50,30,30" Spacing="10">
-        <Label Text="Informe os valores 💰"
+        <Label Text="Informe os Valores 💰"
                FontSize="24"
                HorizontalOptions="Center"
                Margin="0,0,0,30"/>
