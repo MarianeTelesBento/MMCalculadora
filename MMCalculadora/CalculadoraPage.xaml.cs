@@ -63,8 +63,6 @@ public partial class CalculadoraPage : ContentPage
 
     private void OnDotClicked(object sender, EventArgs e)
     {
-        var button = (Button)sender;
-        var buttonText = button.Text;
 
         if (displayEntry.Text.Contains('.'))
         {
@@ -72,7 +70,7 @@ public partial class CalculadoraPage : ContentPage
         }
         else
         {
-            displayEntry.Text += buttonText;
+            displayEntry.Text += '.';
         }
     }
 
